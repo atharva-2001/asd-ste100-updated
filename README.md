@@ -1,6 +1,7 @@
 # ASD-STE100 Updated
 
-all text in this readme is ai written and the skill itself is in works and will gradually be updated. meanwhile if something is off then please [make an issue](https://github.com/atharva-2001/asd-ste100-updated/issues). this note is written by a human.
+> [!WARNING]
+> all text in this readme is ai written and the skill itself is in works and will gradually be updated. meanwhile if something is off then please [make an issue](https://github.com/atharva-2001/asd-ste100-updated/issues). this note is written by a human.
 
 This is an agent skill. It makes model output easy for people to read. It has two parts:
 
