@@ -15,6 +15,9 @@
 
 # ASD-STE100 Updated
 
+> [!NOTE]
+> An AI model wrote all the text in this README. The skill is a work in progress, and it will get updates over time. If something is wrong or unclear, please [open an issue](https://github.com/atharva-2001/asd-ste100-updated/issues).
+
 This is an agent skill. It makes model output easy for people to read. It has two parts:
 
 1. **Simplified Technical English (STE).** [ASD-STE100](https://www.asd-ste100.org/) is the controlled English that the aerospace industry uses so that nobody can misread a maintenance manual. This part is the [asd-ste100 skill by Dustin Yuchen Teng](https://github.com/danyuchn/asd-ste100-skill). Its text is not changed.
