@@ -1,22 +1,6 @@
-<p align="center">
-  <img src="assets/banner.svg" alt="ASD-STE100 Updated: model dialect on the left, plain English on the right" width="900">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
-  <a href="https://arxiv.org/abs/2610.29162"><img alt="Paper: arXiv 2610.29162" src="https://img.shields.io/badge/paper-arXiv%202610.29162-b31b1b.svg"></a>
-  <a href="https://news.ycombinator.com/item?id=50223647"><img alt="Discussed on Hacker News" src="https://img.shields.io/badge/discussed%20on-Hacker%20News-ff6600.svg"></a>
-  <img alt="Version 0.4.0-updated.1" src="https://img.shields.io/badge/version-0.4.0--updated.1-blue.svg">
-  <img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-skill-d97757.svg">
-  <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-111111.svg">
-  <img alt="Linter: Python stdlib only" src="https://img.shields.io/badge/linter-python%20stdlib%20only-3776ab.svg">
-  <a href="https://github.com/danyuchn/asd-ste100-skill"><img alt="Fork of danyuchn/asd-ste100-skill" src="https://img.shields.io/badge/fork%20of-danyuchn%2Fasd--ste100--skill-lightgrey.svg"></a>
-</p>
-
 # ASD-STE100 Updated
 
-> [!NOTE]
-> An AI model wrote all the text in this README. The skill is a work in progress, and it will get updates over time. If something is wrong or unclear, please [open an issue](https://github.com/atharva-2001/asd-ste100-updated/issues).
+all text in this readme is ai written and the skill itself is in works and will gradually be updated. meanwhile if something is off then please [make an issue](https://github.com/atharva-2001/asd-ste100-updated/issues). this note is written by a human.
 
 This is an agent skill. It makes model output easy for people to read. It has two parts:
 
@@ -102,7 +86,7 @@ This fork changes these parts:
 
 - the "Model dialect habits" section in `SKILL.md`
 - the skill name, the description and the version
-- this README, the banner and the Codex metadata in `agents/openai.yaml`
+- this README and the Codex metadata in `agents/openai.yaml`
 
 ## Limits
 
