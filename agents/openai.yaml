@@ -1,5 +1,5 @@
 interface:
-  display_name: "ASD-STE100"
-  short_description: "Rewrite text in Simplified Technical English"
+  display_name: "ASD-STE100 Updated"
+  short_description: "Simplified Technical English plus model dialect checks"
 policy:
   allow_implicit_invocation: false

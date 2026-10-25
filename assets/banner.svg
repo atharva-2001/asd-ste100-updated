@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" font-family="ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="260" rx="14" fill="#0f172a"/>
+  <text x="40" y="58" fill="#f8fafc" font-size="30" font-weight="700">ASD-STE100 Updated</text>
+  <text x="40" y="88" fill="#94a3b8" font-size="16">Simplified Technical English, plus checks for the habits models picked up in post-training</text>
+
+  <rect x="40" y="114" width="395" height="110" rx="10" fill="#3f1d2b"/>
+  <text x="60" y="142" fill="#fda4af" font-size="13" font-weight="700" letter-spacing="1.5">MODEL DIALECT</text>
+  <text x="60" y="172" fill="#fecdd3" font-size="16">"The whole conversation is eating</text>
+  <text x="60" y="194" fill="#fecdd3" font-size="16">its own tail. So yes, calendar it."</text>
+
+  <text x="450" y="178" fill="#64748b" font-size="28" text-anchor="middle">→</text>
+
+  <rect x="465" y="114" width="395" height="110" rx="10" fill="#12352a"/>
+  <text x="485" y="142" fill="#6ee7b7" font-size="13" font-weight="700" letter-spacing="1.5">PLAIN ENGLISH</text>
+  <text x="485" y="172" fill="#d1fae5" font-size="16">"We keep repeating the same points.</text>
+  <text x="485" y="194" fill="#d1fae5" font-size="16">So yes, put it in your calendar."</text>
+</svg>
