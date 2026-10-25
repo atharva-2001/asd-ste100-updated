@@ -86,16 +86,16 @@ These six habits cover most of what makes machine-written English hard to parse.
 
 ### Model dialect habits
 
-Post-trained models overuse these forms because they save tokens. Each one makes a human reader work harder. Source: Clark, Martin and Mahowald, "Why is AI-generated language so hard to understand?" ([arXiv 2610.29162](https://arxiv.org/abs/2610.29162), [HN thread](https://news.ycombinator.com/item?id=50223647)). Scan for all of them in your own output, not only in text you rewrite. Write the draft first. Then check it against this list and fix each hit. A check after writing works better than a ban before writing.
+Post-trained models use these forms too much, probably because the forms save tokens. Each one makes a human reader work harder. Source: Clark, Martin and Mahowald, "Why is AI-generated language so hard to understand?" ([arXiv 2610.29162](https://arxiv.org/abs/2610.29162), [HN thread](https://news.ycombinator.com/item?id=50223647)). Scan for all of them in your own output, not only in text you rewrite. Write the draft first. Then check it against this list and fix each hit. A check after writing probably works better than a ban before writing.
 
 7. **Human verbs on things.** A thing "bites", "swallows", "eats", "lives", "wants", "fights". Fix: name the real effect. "This asymmetry bites" becomes "This asymmetry causes wrong results".
 8. **Nouns used as verbs.** "calendar it", "footnote it", "PR it", "ticket this". Fix: use a real verb phrase. "Put it in your calendar."
 9. **Dropped "that".** "the file you edited", "the name he'd never use". Fix: keep "that" when the clause is more than three words or the sentence is long.
-10. **Invented phrases.** Word pairs a person would not write, like "reader-patience budget" or "verified red". This includes private labels for earlier findings in a long session. Fix: say it in common words, or define the label once in brackets.
+10. **Invented phrases.** Word pairs that a person would not write, like "reader-patience budget" or "verified red". This includes private labels for earlier findings in a long session. Fix: say it in common words, or define the label once in brackets.
 11. **Long gaps.** The subject is far from its verb, or a verb is far from its object. Fix: move the parts together, or split the sentence.
 12. **Verbs with no object.** "the form submits", "the test reproduces", "talking costs". Fix: say who acts on what. "The form sends the data."
 
-These habits get worse as a conversation grows. Recheck for them after long sessions.
+These habits may get worse as a conversation grows. Recheck for them after long sessions.
 
 ## Process
 

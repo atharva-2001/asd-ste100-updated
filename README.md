@@ -15,10 +15,10 @@
 
 # ASD-STE100 Updated
 
-An agent skill that makes model output easy for people to read. It has two parts:
+This is an agent skill. It makes model output easy for people to read. It has two parts:
 
-1. **Simplified Technical English (STE).** [ASD-STE100](https://www.asd-ste100.org/) is the controlled English that the aerospace industry uses so that nobody can misread a maintenance manual. This part is the [asd-ste100 skill by Dustin Yuchen Teng](https://github.com/danyuchn/asd-ste100-skill), copied without changes.
-2. **Model dialect habits (new).** Six checks for sentence forms that post-trained models overuse. Each form saves tokens but makes the reader work harder. The list comes from a paper of October 2026.
+1. **Simplified Technical English (STE).** [ASD-STE100](https://www.asd-ste100.org/) is the controlled English that the aerospace industry uses so that nobody can misread a maintenance manual. This part is the [asd-ste100 skill by Dustin Yuchen Teng](https://github.com/danyuchn/asd-ste100-skill). Its text is not changed.
+2. **Model dialect habits (new).** This part adds six checks. They find sentence forms that post-trained models (models with extra training for chat, code and reasoning) use too much. Each form saves tokens but makes the reader work harder.
 
 ## Contents
 
@@ -32,15 +32,15 @@ An agent skill that makes model output easy for people to read. It has two parts
 
 ## Why this exists
 
-The paper [Why is AI-generated language so hard to understand?](https://arxiv.org/abs/2610.29162) (Clark, Martin and Mahowald, NYU and UT Austin, 2026) measured text from 14 models. These are its main results:
+The six checks come from a paper by Clark, Martin and Mahowald (NYU and UT Austin, October 2026). Its title is [Why is AI-generated language so hard to understand?](https://arxiv.org/abs/2610.29162). They measured text from 14 models. These are their main results:
 
-- **Models use more hard forms than people do.** All nine frontier models used more "human verb on a thing" phrases and more rare word pairs than human text of the same type.
-- **Post-training is the likely cause.** Base models were close to human text. In the Olmo family, the effect grew from base to instruct to reasoning model.
-- **Long sessions make it worse.** The effect was larger in multi-turn chat and coding sessions than in single essays.
-- **Length penalties can cause it.** The authors trained a small model with RL and a penalty on length. The model began to always pick the shorter form of a sentence, also in forms that it did not see in training.
-- **It can be fixed.** Claude Opus 5.5 scored lower than Opus 5 on 19 of 21 measures.
+- **Models use more hard-to-read forms than people do.** The authors tested nine frontier models (the newest and most capable models). All nine used more "human verb on a thing" phrases than human text of the same type. All nine also used more rare word pairs.
+- **Post-training is the likely cause.** Base models (models with pretraining only) were close to human text. Olmo is a family of open models from the Allen Institute for AI. In this family, the effect grew at each step: base model, then instruct model, then reasoning model.
+- **Long sessions may make it worse.** The effect was larger in multi-turn chat and coding sessions than in single essays. The authors think that the many turns are the reason.
+- **Length penalties can cause it.** The authors trained a small model with RL (reinforcement learning, training by reward) and a penalty on length. The model began to always pick the shorter form of a sentence. It also did this in some sentence forms that it did not see in training.
+- **Models can improve.** Claude Opus 5.5 used fewer hard-to-read forms than Opus 5 on 19 of 21 measures.
 
-The paper names the problem but gives no fix for users. [The Hacker News thread](https://news.ycombinator.com/item?id=50223647) had one fix that worked for many people: tell the model to write in ASD-STE100. This skill does that, and adds the forms from the paper as a checklist.
+The authors name the problem. They give no fix for users. In [the Hacker News thread](https://news.ycombinator.com/item?id=50223647), several people said that one prompt helps: tell the model to write in ASD-STE100. This skill does that. It also adds the forms from the paper as a checklist.
 
 ## The six model dialect habits
 
@@ -48,14 +48,14 @@ The paper names the problem but gives no fix for users. [The Hacker News thread]
 |---|---|---|
 | Human verbs on things | "This asymmetry bites." | "This asymmetry causes wrong results." |
 | Nouns used as verbs | "So yes, calendar it." | "So yes, put it in your calendar." |
-| Dropped "that" | "the name he'd never hear anyone use" | "the name that he never heard anyone use" |
+| Dropped "that" | "a first name he'd never hear anyone use" | "a first name that he would never hear anyone use" |
 | Invented phrases | "verified red against the original source" | "checked that the test fails on the original code" |
-| Long gaps | Subject far from its verb, or verb far from its object | Move the parts together, or split the sentence |
+| Long gaps | "A cat who can always get up and away is a much calmer cat." | "A cat is much calmer when it can always escape." |
 | Verbs with no object | "The form submits." | "The form sends the data." |
 
-The first four "model writes" examples are quotes from the paper. The last row comes from the Hacker News thread.
+The examples in the first five rows are quotes from the paper. The example in the last row comes from the Hacker News thread.
 
-The skill tells the model to write a draft first, then check the draft against this list and fix each hit. A check after writing works better than a ban before writing, because the habits come from training and a ban alone does not remove them. The habits also come back as a session grows, so the skill tells the model to check again in long sessions.
+The skill tells the model to write a draft first. Then the model checks the draft against this list and fixes each problem that it finds. One commenter in the Hacker News thread said that this works better than a ban before writing. A likely reason is that the habits come from training, so a ban alone does not remove them. The habits may also come back as a session grows. For this reason, the skill tells the model to check again in long sessions.
 
 ## Install
 
@@ -75,9 +75,9 @@ git clone https://github.com/atharva-2001/asd-ste100-updated ~/.codex/skills/asd
 
 ## Use
 
-Call the skill by name, for example `/asd-ste100-updated`. Or ask for a "plain-language rewrite" or an "STE100 rewrite". The skill gives back only the rewritten text. Ask "show the diff" to get a table of each rule that the text broke.
+Call the skill by name, for example `/asd-ste100-updated`. You can also ask for a "plain-language rewrite" or an "STE100 rewrite". The skill returns only the rewritten text. Ask "show the diff" to get a table of each rule that the text broke.
 
-The linter checks the structural STE rules. It uses only the Python standard library:
+The repo has a linter (a script that finds rule breaks). It checks the structural STE rules, and it uses only the Python standard library:
 
 ```sh
 python3 scripts/ste-lint.py README.md
@@ -89,13 +89,13 @@ The linter does not check the six model dialect habits yet. The model checks the
 
 ## What comes from upstream
 
-These files are from [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) v0.4.0, without changes:
+These files are from [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) v0.4.0, with no changes:
 
 - `scripts/ste-lint.py`, the structural linter
 - `references/writing-rules.md`, a summary of the 53 STE writing rules
 - `examples/`, before and after examples, and linter edge cases
 
-The changes in this fork are:
+This fork changes these parts:
 
 - the "Model dialect habits" section in `SKILL.md`
 - the skill name, the description and the version
@@ -103,10 +103,10 @@ The changes in this fork are:
 
 ## Limits
 
-- **No human reading test.** The paper links each habit to reading difficulty through older psycholinguistics studies. It did not test people on model text.
-- **A small causal test.** The length penalty result used a 1.5B model on one narrow task. It shows that the effect can happen. It does not show that frontier training caused it.
-- **English only.**
-- **No official STE dictionary.** ASD does not allow other parties to copy its approved word list. The skill uses the rules and prefers plain words. It does not claim STE compliance.
+- **No human reading test.** The authors link each habit to reading difficulty through older psycholinguistics studies (studies of how people process language). They did not test people on model text.
+- **A small causal test.** The authors ran the length penalty test on a 1.5B model (1.5 billion parameters) and one narrow task. The test shows that the effect can happen. It does not show that frontier training caused it.
+- **English only.** The paper and this skill cover English only.
+- **No official STE dictionary.** ASD does not let most other parties copy its approved word list. The skill uses the rules and prefers plain words. It does not claim STE compliance.
 
 ## Credits and license
 
