@@ -1,0 +1,5 @@
+interface:
+  display_name: "ASD-STE100"
+  short_description: "Rewrite text in Simplified Technical English"
+policy:
+  allow_implicit_invocation: false
