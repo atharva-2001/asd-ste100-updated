@@ -1,7 +1,7 @@
 ---
-name: asd-ste100
-description: "Use when English text must be parsed without a human to resolve ambiguity — tool descriptions, error messages, inter-agent instructions, system prompts, status reports — and misreading has a real cost, or when text reads as dense, hedged, or easy to misparse. Triggers: disambiguate, STE100 rewrite, apply Simplified Technical English, plain-language rewrite, controlled-language rewrite, rewrite so an agent cannot misread this. Not for creative or marketing copy."
-version: 0.4.0
+name: asd-ste100-updated
+description: "Use instead of asd-ste100. Use when English text must be parsed without a human to resolve ambiguity (tool descriptions, error messages, inter-agent instructions, system prompts, status reports, replies and reports for Atharva) and misreading has a real cost, or when text reads as dense, hedged, or easy to misparse. Adds a check for model dialect habits (human verbs on things, nouns used as verbs, dropped that, invented phrases, long gaps, verbs with no object). Triggers: disambiguate, STE100 rewrite, apply Simplified Technical English, plain-language rewrite, controlled-language rewrite, rewrite so an agent cannot misread this. Not for creative or marketing copy."
+version: 0.4.0-updated.1
 ---
 
 # Simplified Technical English (ASD-STE100)
@@ -86,14 +86,14 @@ These six habits cover most of what makes machine-written English hard to parse.
 
 ### Model dialect habits
 
-Post-trained models overuse these forms because they save tokens. Each one makes a human reader work harder. Source: Clark, Martin and Mahowald, "Why is AI-generated language so hard to understand?" ([arXiv 2610.29162](https://arxiv.org/abs/2610.29162), [HN thread](https://news.ycombinator.com/item?id=50223647)). Scan for all of them in your own output, not only in text you rewrite.
+Post-trained models overuse these forms because they save tokens. Each one makes a human reader work harder. Source: Clark, Martin and Mahowald, "Why is AI-generated language so hard to understand?" ([arXiv 2610.29162](https://arxiv.org/abs/2610.29162), [HN thread](https://news.ycombinator.com/item?id=50223647)). Scan for all of them in your own output, not only in text you rewrite. Write the draft first. Then check it against this list and fix each hit. A check after writing works better than a ban before writing.
 
-7. **Human verbs on things** — a thing "bites", "swallows", "eats", "lives", "wants", "fights". Fix: name the real effect. "This asymmetry bites" becomes "This asymmetry causes wrong results".
-8. **Nouns used as verbs** — "calendar it", "footnote it", "PR it", "ticket this". Fix: use a real verb phrase. "Put it in your calendar."
-9. **Dropped "that"** — "the file you edited", "the name he'd never use". Fix: keep "that" when the clause is more than three words or the sentence is long.
-10. **Invented phrases** — word pairs a person would not write, like "reader-patience budget" or "verified red". This includes private labels for earlier findings in a long session. Fix: say it in common words, or define the label once in brackets.
-11. **Long gaps** — the subject is far from its verb, or a verb is far from its object. Fix: move the parts together, or split the sentence.
-12. **Verbs with no object** — "the form submits", "the test reproduces", "talking costs". Fix: say who acts on what. "The form sends the data."
+7. **Human verbs on things.** A thing "bites", "swallows", "eats", "lives", "wants", "fights". Fix: name the real effect. "This asymmetry bites" becomes "This asymmetry causes wrong results".
+8. **Nouns used as verbs.** "calendar it", "footnote it", "PR it", "ticket this". Fix: use a real verb phrase. "Put it in your calendar."
+9. **Dropped "that".** "the file you edited", "the name he'd never use". Fix: keep "that" when the clause is more than three words or the sentence is long.
+10. **Invented phrases.** Word pairs a person would not write, like "reader-patience budget" or "verified red". This includes private labels for earlier findings in a long session. Fix: say it in common words, or define the label once in brackets.
+11. **Long gaps.** The subject is far from its verb, or a verb is far from its object. Fix: move the parts together, or split the sentence.
+12. **Verbs with no object.** "the form submits", "the test reproduces", "talking costs". Fix: say who acts on what. "The form sends the data."
 
 These habits get worse as a conversation grows. Recheck for them after long sessions.
 
